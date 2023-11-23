@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css" />
+    <style>
+        /* Add your existing styles here */
+
+        /* New styles for mobile and tablet */
+       
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container2">
+        <div class="navbar" >
+            <i class="fa fa-bars nav-icon"></i>
+
+            <p>Home</p>
+            <p>Order</p>
+            <p>Food</p>
+            <p>Restaurant</p>
+            <p>Testimonials</p>
+            <p>Contact us</p>
+            <div class="navright" >
+                <i class="fa fa-phone" style="font-size:20px ;margin-right: 20px;"></i>
+                <i class="fa fa-shopping-cart" style="font-size:20px"></i>
+            </div>
+            <ul class="dropdown-list"></ul>
+        </div>
+        <div>
+            <img src="/images/img1.jpg" class="hero_image" />
+          </div>
+          <div class="floatbox">
+            <h1 class="h1tag">LOREM IPSUM</h1>
+            <p class="textpara">
+              Lorem Ipsum has been the industry's standard dummy <br> text ever since the
+              1500s, when an unknown printer took<br> a galley of type and scrambled it
+              to make a type <br> specimen book.
+            </p>
+          </div>
+          <div class="cover" >
+            <hr />
+            <p class="order">Order Now</p>
+            <div class="product_container">
+              <div class="product">
+                <div  ">
+                  <img class="product_image" src="/images/img4.jpg" />
+                </div>
+                <p class="product_name">BURGER</p>
+                <p class="product_description">Lorem Ipsum has been the <br> industry's standard dummy text</p>
+              </div>
+              <div class="product">
+                <div  ">
+                  <img src="/images/img2.jpg" class="product_image" />
+                </div>
+                <p class="product_name">PIZZA</p>
+                <p class="product_description">Lorem Ipsum has been the <br> industry's standard dummy text</p>
+              </div>
+              <div class="product">
+                <div  ">
+                    <img src="/images/img3.jpg" class="product_image" />
+                </div>
+                <p class="product_name">PASTA</p>
+                <p class="product_description">Lorem Ipsum has been the <br> industry's standard dummy text</p>
+              </div>
+            </div>
+            <button>Order</button>
+          </div>
+    </div>
+
+    <script>
+        // JavaScript to dynamically create a list and append it to the navbar
+        document.querySelector('.fa-bars').addEventListener('click', function () {
+            var navbar = document.querySelector('.navbar');
+            var navItems = document.querySelectorAll('.navbar p');
+            var existingList = document.querySelector('.dropdown-list');
+
+            // Check if the list already exists
+            if (existingList) {
+                existingList.remove(); // Remove the existing list
+            } else {
+                // Create a list element
+                var list = document.createElement('ul');
+                list.classList.add('dropdown-list');
+
+                // Append list items to the list
+                navItems.forEach(function (item) {
+                    var listItem = document.createElement('li');
+                    listItem.classList.add('dropdown-list-item');
+                    listItem.textContent = item.textContent;
+                    list.appendChild(listItem);
+                });
+
+                // Append the list to the navbar
+                navbar.appendChild(list);
+            }
+        });
+    </script>
+</body>
+</html>
